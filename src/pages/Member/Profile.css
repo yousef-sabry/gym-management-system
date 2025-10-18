@@ -1,0 +1,262 @@
+/* Profile.css */
+:root {
+  --primary: #0F172A;    
+  --secondary: #ff6b35;  
+  --dark: #0F172A;       
+  --light: #E2E8F0;      
+  --success: #10B981;    
+  --danger: #EF4444;     
+  --font: 'Poppins', sans-serif;
+}
+
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  font-family: var(--font);
+  color: var(--primary);
+  background-color: var(--dark);
+  min-height: 80vh;
+}
+
+.profile-left {
+  flex: 1 1 250px;
+  background-color: var(--primary);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 1px 5px 15px var(--secondary);
+  text-align: center;
+  color: var(--secondary);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.profile-left img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.profile-left h2 {
+  margin-bottom: 0.5rem;
+}
+
+.profile-left p {
+  margin: 0.3rem 0;
+}
+
+.active-status {
+  color: #10b981; /* أخضر */
+  font-weight: bold;
+}
+
+.inactive-status {
+  color: #ef4444; /* أحمر */
+  font-weight: bold;
+}
+
+
+.profile-right {
+  flex: 2 1 500px;
+  background-color: var(--dark);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--secondary);
+  color: #ff6b35;
+}
+
+.profile-right h3 {
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+.profile-right p {
+  margin: 0.3rem 0;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: darkorange;
+}
+
+.subscription-progress {
+  margin-top: 1rem;
+}
+
+.progress-bar-container {
+  background-color: #e2e8f0;
+  border-radius: 12px;
+  height: 18px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: var(--success);
+  width: 0%;
+  border-radius: 12px 0 0 12px;
+  transition: width 0.5s ease-in-out;
+}
+
+.workout-schedule {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+.workout-schedule table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.workout-schedule th,
+.workout-schedule td {
+  border: 1px solid #ddd;
+  padding: 0.8rem;
+  text-align: left;
+}
+
+.workout-schedule th {
+  background-color: var(--secondary);
+  color: white;
+  font-weight: 500;
+}
+
+/* Responsive Media Queries */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  .profile-container {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .profile-left,
+  .profile-right {
+    flex: 1 1 100%;
+  }
+
+  .profile-left {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .profile-left img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .profile-right {
+    padding: 1rem;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .btn-primary {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .subscription-progress {
+    margin-top: 0.8rem;
+  }
+
+  .workout-schedule table {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  .profile-left {
+    font-size: 1.2rem;
+    padding: 0.8rem !important;
+    width: 320px;
+  }
+
+  .profile-left img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 0.5rem;
+  }
+
+  .profile-left h2 {
+    font-size: 1.4rem;
+  }
+
+  .profile-left p {
+    font-size: 1rem;
+  }
+
+  .profile-right {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+    width: 320px;
+  }
+
+  .profile-right h3 {
+    font-size: 1.2rem;
+  }
+
+  .profile-right p {
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .workout-schedule {
+    margin-top: 1rem;
+  }
+
+  .workout-schedule table {
+    font-size: 0.85rem;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .workout-schedule th,
+  .workout-schedule td {
+    padding: 0.5rem;
+  }
+
+  .progress-bar-container {
+    height: 14px;
+  }
+
+  .progress-bar {
+    border-radius: 10px 0 0 10px;
+  }
+}
+

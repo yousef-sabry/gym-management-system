@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --register-primary: #0F172A;
+  --register-secondary: #ff6b35;
+  --register-dark: #0F172A;
+  --register-light: #E2E8F0;
+  --register-success: #10B981;
+  --register-font: 'Poppins', sans-serif;
+}
+
+/* ---------- Container ---------- */
+.auth-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, var(--register-dark), var(--register-primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--register-font);
+  padding: 1rem;
+}
+.page-title {
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+  
+}
+
+
+/* ---------- Card ---------- */
+.auth-card {
+  display: flex;
+  background: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  max-width: 850px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.auth-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ---------- Image ---------- */
+.auth-image {
+  flex: 1;
+  background: var(--register-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Form ---------- */
+.auth-form {
+  flex: 1;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-form h2 {
+  color: var(--register-primary);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subtitle {
+  color: #64748b;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.register-icon {
+  color: var(--register-secondary);
+}
+
+/* ---------- Inputs ---------- */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.9rem 1rem 0.9rem 2.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.7rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  border-color: var(--register-secondary);
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2);
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  transform: translateY(-50%);
+  color: var(--register-secondary);
+  font-size: 1.1rem;
+}
+
+/* ---------- Button ---------- */
+.btn-register {
+  background: var(--register-secondary);
+  color: white;
+  border: none;
+  border-radius: 0.7rem;
+  padding: 0.9rem;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-register:hover {
+  background: #ff824d;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .auth-card {
+    flex-direction: column;
+    max-width: 95%;
+  }
+
+  .auth-image {
+    display: none;
+  }
+
+  .auth-form {
+    padding: 2rem;
+  }
+
+  .auth-form h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-register {
+    padding: 0.8rem;
+  }
+}

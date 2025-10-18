@@ -1,0 +1,486 @@
+:root {
+  --primary: #0F172A;    /* Dark slate (primary elements) */
+  --secondary: #ff6b35;  /* Orange accent (buttons, highlights) */
+  --dark: #0F172A;       /* Very dark backgrounds */
+  --light: #E2E8F0;      /* Light gray text/backgrounds */
+  --success: #10B981;    /* Green for checkmarks/success */
+  --danger: #EF4444;     /* Red for alerts (not heavily used here) */
+  --font: 'Poppins', sans-serif; /* Font family */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  overflow: hidden; /* No body scroll on desktop */
+  background-color: var(--dark); /* Ensure full coverage */
+}
+
+/* Main Container: Full viewport grid, no scroll on desktop */
+.dashboard-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 20% 35% 45%; /* Fixed rows to fit without scroll: Header (20%), Charts (35%), Bottom (45%) */
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 0.5rem; /* Minimal padding */
+  gap: 0.25rem; /* Tiny gaps between rows */
+  overflow: hidden; /* Ensure no overflow */
+}
+
+/* Header Row: Title + Stats (top 20% height) */
+.header-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: var(--primary); /* Subtle background for cohesion */
+  border-radius: 4px;
+  border: 1px solid var(--secondary);
+}
+
+.dashboard-title {
+  font-size: 1.5rem; /* Smaller title to save space */
+  margin: 0;
+  color: var(--light);
+  font-weight: bold;
+}
+
+.stats-row {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1; /* Fill remaining height in header row */
+  overflow-x: auto; /* Horizontal scroll if too many stats (rare on desktop) */
+  padding: 0.25rem 0;
+}
+
+.stat-box-compact {
+  background: var(--primary);
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid var(--secondary);
+  min-width: 120px; /* Compact width for 5 stats to fit */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s; /* Subtle hover */
+}
+
+.stat-box-compact:hover {
+  transform: scale(1.02);
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.stat-title-compact {
+  font-size: 0.7rem;
+  margin: 0 0 0.25rem 0;
+  color: var(--light);
+  opacity: 0.8;
+}
+
+.stat-value-compact {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--secondary);
+}
+
+/* Charts Row: Side-by-side charts (35% height) */
+.charts-row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  overflow: hidden;
+}
+
+.chart-wrapper-compact {
+  flex: 1;
+  background: var(--primary);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--secondary);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevent chart overflow */
+}
+
+.chart-title-compact {
+  margin-bottom: 0.25rem;
+  color: var(--light);
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Bottom Row: Members (left, wider) + Right panel (trainers/activities stacked) (45% height) */
+.bottom-row {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  overflow: hidden;
+}
+
+.members-section-compact {
+  flex: 1.5; /* Wider space for table */
+  background: var(--primary);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--secondary);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.section-title-compact {
+  font-size: 0.9rem;
+  color: var(--light);
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.members-table-compact {
+  flex: 1; /* Fill section height */
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem; /* Tiny text to fit */
+  overflow: hidden;
+  color: var(--light);
+}
+
+.members-table-compact th,
+.members-table-compact td {
+  padding: 0.25rem;
+  text-align: center;
+  border-bottom: 1px solid var(--light);
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.members-table-compact th {
+  background: var(--dark);
+  font-weight: bold;
+}
+
+.members-table-compact tbody tr:hover {
+  background: rgba(255, 107, 53, 0.1); /* Subtle row hover */
+}
+
+.status-cell-compact {
+  font-weight: bold;
+}
+
+.status-cell-compact.success {
+  color: var(--success);
+}
+
+.status-cell-compact.danger {
+  color: var(--danger);
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow: hidden;
+}
+
+.trainers-section-compact,
+.activities-section-compact {
+  flex: 1; /* Equal split in right panel */
+  background: var(--primary);
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--secondary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.trainers-list-compact {
+  flex: 1;
+  font-size: 0.75rem;
+  max-height: 100%;
+  overflow-y: auto; /* Tiny internal scroll if needed, but unlikely */
+}
+
+.trainer-item-compact {
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--light);
+  opacity: 0.9;
+}
+
+.trainer-header-compact {
+  font-size: 0.8rem;
+  margin-bottom: 0.25rem;
+  color: var(--light);
+  font-weight: bold;
+}
+
+.trainer-header-compact .active {
+  color: var(--success);
+}
+
+.trainer-header-compact .inactive {
+  color: var(--danger);
+}
+
+.trainees-compact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+.trainees-compact li {
+  margin-bottom: 0.125rem;
+  padding: 0.125rem 0;
+  opacity: 0.9;
+  line-height: 1.2;
+}
+
+.trainees-compact li:before {
+  content: "• ";
+  color: var(--secondary);
+}
+
+.activities-compact {
+  flex: 1;
+  list-style: disc;
+  padding-left: 1rem;
+  font-size: 0.75rem;
+  max-height: 100%;
+  overflow-y: auto; /* Internal scroll if many activities */
+  line-height: 1.2;
+}
+
+.activities-compact li {
+  margin-bottom: 0.125rem;
+  opacity: 0.9;
+}
+
+/* Desktop Hover Effects (subtle) */
+@media (min-width: 1025px) {
+  .stat-box-compact:hover,
+  .trainer-item-compact:hover,
+  .members-table-compact tbody tr:hover {
+    cursor: pointer;
+  }
+}
+
+/* Responsive: Tablets and Smaller Desktops (≤1024px) - Allow scrolling, stack vertically */
+@media (max-width: 1024px) {
+  body {
+    overflow-y: auto; /* Re-enable vertical scroll */
+  }
+
+  .dashboard-container {
+    height: auto; /* Auto height for scrolling */
+    grid-template-rows: auto; /* Remove fixed rows; use flex instead */
+    padding: 1rem;
+    gap: 1rem;
+    overflow: visible;
+  }
+
+  .header-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.25rem;
+  }
+
+  .stats-row {
+    flex-direction: row;
+    overflow-x: auto; /* Horizontal scroll for stats if needed */
+    gap: 0.75rem;
+  }
+
+  .stat-box-compact {
+    min-width: 150px;
+    padding: 0.75rem;
+  }
+
+  .stat-title-compact {
+    font-size: 0.8rem;
+  }
+
+  .stat-value-compact {
+    font-size: 1.3rem;
+  }
+
+  .charts-row {
+    flex-direction: column; /* Stack charts */
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .chart-wrapper-compact {
+    height: 250px; /* Fixed height for stacked charts */
+    padding: 0.75rem;
+  }
+
+  .chart-title-compact {
+    font-size: 1rem;
+  }
+
+  .bottom-row {
+    flex-direction: column; /* Stack left/right */
+    gap: 0.75rem;
+    padding: 0.5rem;
+  }
+
+  .members-section-compact,
+  .right-panel {
+    flex: none;
+  }
+
+  .right-panel {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .trainers-section-compact,
+  .activities-section-compact {
+    flex: none;
+    padding: 0.75rem;
+  }
+
+  .members-table-compact {
+    font-size: 0.85rem;
+  }
+
+  .members-table-compact th,
+  .members-table-compact td {
+    padding: 0.5rem;
+  }
+
+  .trainers-list-compact,
+  .activities-compact {
+    font-size: 0.85rem;
+  }
+
+  .trainees-compact li,
+  .activities-compact li {
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Mobile: Phones (≤768px) - Single column, full scrolling, optimized spacing */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .stats-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .stat-box-compact {
+    min-width: 120px;
+    flex: 1 1 45%; /* 2 per row on mobile */
+  }
+
+  .charts-row {
+    gap: 0.5rem;
+  }
+
+  .chart-wrapper-compact {
+    height: 200px; /* Shorter on mobile */
+  }
+
+  .bottom-row {
+    gap: 0.5rem;
+  }
+
+  .members-section-compact {
+    overflow-x: auto; /* Horizontal scroll for table */
+  }
+
+  .members-table-compact {
+    min-width: 500px; /* Ensure columns don't squeeze */
+    font-size: 0.8rem;
+  }
+
+  .members-table-compact th,
+  .members-table-compact td {
+    padding: 0.4rem 0.2rem;
+    white-space: nowrap;
+  }
+
+  .section-title-compact {
+    font-size: 1rem;
+  }
+
+  .trainers-list-compact,
+  .activities-compact {
+    font-size: 0.8rem;
+  }
+
+  .trainees-compact li {
+    font-size: 0.75rem;
+  }
+
+  .activities-compact {
+    padding-left: 0.75rem;
+  }
+}
+
+/* Extra Small Phones (≤480px) - Further optimizations */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0.5rem;
+  }
+
+  .stats-row {
+    flex-direction: column;
+  }
+
+  .stat-box-compact {
+    flex: 1;
+    min-width: unset;
+  }
+
+  .chart-wrapper-compact {
+    height: 180px;
+  }
+
+  .members-table-compact {
+    min-width: 400px;
+    font-size: 0.75rem;
+  }
+
+  .members-table-compact th,
+  .members-table-compact td {
+    padding: 0.3rem 0.1rem;
+    font-size: 0.7rem;
+  }
+
+  .trainers-list-compact,
+  .activities-compact {
+    font-size: 0.75rem;
+  }
+
+  .trainees-compact li {
+    line-height: 1.1;
+  }
+}

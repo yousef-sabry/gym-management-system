@@ -1,0 +1,101 @@
+
+
+.trainers-page {
+  color: var(--login-light);
+  font-family: var(--login-font);
+  min-height: 100vh;
+}
+
+.trainers-title {
+  color: var(--login-secondary);
+  letter-spacing: 1px;
+}
+
+.trainer-form {
+  background-color: rgba(15, 23, 42, 0.9);
+  border-left: 4px solid var(--login-secondary);
+  border-radius: 15px;
+}
+
+.add-btn {
+  background-color: var(--login-secondary);
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #e55a2b;
+  transform: translateY(-2px);
+}
+
+.trainer-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--login-secondary);
+  transition: transform 0.3s ease;
+}
+
+.trainer-avatar:hover {
+  transform: scale(1.1);
+}
+
+.edit-btn {
+  background-color: transparent;
+  border: 1px solid var(--login-secondary);
+  color: var(--login-secondary);
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
+  background-color: var(--login-secondary);
+  color: white;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: 1px solid var(--login-danger);
+  color: var(--login-danger);
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: var(--login-danger);
+  color: white;
+}
+
+.table-dark {
+  background-color: var(--login-dark);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead th {
+  color: var(--login-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .trainer-form input,
+  .trainer-form select {
+    width: 100%;
+  }
+
+  .trainer-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .add-btn {
+    font-size: 0.9rem;
+  }
+}
+.trainers-page, body {
+  opacity: 1 !important;
+  background-color: #0F172A !important;
+  color: #E2E8F0 !important;
+}
+

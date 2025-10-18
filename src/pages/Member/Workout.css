@@ -1,0 +1,180 @@
+.workout-container {
+  padding: 2rem;
+  color: var(--dark);
+  font-family: var(--font);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== Member Info ========== */
+.member-header {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 700px;
+  transition: all 0.3s ease;
+}
+
+.member-header:hover {
+  transform: translateY(-3px);
+}
+
+.member-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1.5rem;
+  border: 3px solid var(--secondary);
+}
+
+.member-info h2 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+
+.member-info p {
+  color: #64748b;
+  margin: 0.2rem 0;
+  font-size: 1rem;
+}
+
+/* ========== Workout Table ========== */
+.workout-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.workout-table-wrapper {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.workout-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.workout-table th {
+  background-color: var(--secondary);
+  color: white;
+  padding: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.workout-table td {
+  padding: 0.9rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.icon-inline {
+  color: var(--secondary);
+  margin-right: 5px;
+}
+
+.no-data, .no-member {
+  margin-top: 2rem;
+  color: var(--danger);
+  font-weight: 500;
+}
+/* Responsive Media Queries */
+
+/* Tablets and below */
+@media (max-width: 992px) {
+  .member-header {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+
+  .member-img {
+    width: 80px;
+    height: 80px;
+    margin-right: 0;
+    margin-bottom: 0.8rem;
+  }
+
+  .member-info h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .member-info p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .workout-title {
+    font-size: 1.4rem;
+    gap: 8px;
+  }
+
+  .workout-table-wrapper {
+    max-width: 100%;
+  }
+
+  .workout-table th,
+  .workout-table td {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  .member-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .member-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .member-info h2 {
+    font-size: 1.2rem;
+  }
+
+  .member-info p {
+    font-size: 0.85rem;
+  }
+
+  .workout-title {
+    font-size: 1.2rem;
+  }
+
+  .workout-table-wrapper {
+    overflow-x: auto; /* يسمح بالتمرير الجدولي أفقيًا */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling على iOS */
+  }
+
+  .workout-table th,
+  .workout-table td {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .no-data,
+  .no-member {
+    font-size: 0.9rem;
+  }
+}
