@@ -1,10 +1,9 @@
-/* Root color variables */
 :root {
-  --primary: #0F172A;    /* Dark Red */
-  --secondary: #ff6b35;  /* Gold */
-  --dark: #0F172A;       /* Very dark gray */
-  --light: #E2E8F0;      /* Light gray */
-  --success: #10B981;    /* Green */
-  --danger: #EF4444;     /* Bright Red */
-  --font: 'Poppins', sans-serif; /* Font family */
+  --primary: #FACC15;
+  --secondary: #1E3A8A;
+  --dark: #0F172A;
+  --light: #E2E8F0;
+  --success: #10B981;
+  --danger: #EF4444;
+  --font: "Poppins", sans-serif;
 }
