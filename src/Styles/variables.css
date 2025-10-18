@@ -1,9 +1,9 @@
 :root {
-  --primary: #FACC15;
-  --secondary: #1E3A8A;
-  --dark: #0F172A;
-  --light: #E2E8F0;
-  --success: #10B981;
-  --danger: #EF4444;
-  --font: "Poppins", sans-serif;
+  --primary: #0F172A;    /* Dark slate (primary elements) */
+  --secondary: #ff6b35;  /* Orange accent (buttons, highlights) */
+  --dark: #0F172A;       /* Very dark backgrounds */
+  --light: #E2E8F0;      /* Light gray text/backgrounds */
+  --success: #10B981;    /* Green for checkmarks/success */
+  --danger: #EF4444;     /* Red for alerts (not heavily used here) */
+  --font: 'Poppins', sans-serif; /* Font family */
 }
