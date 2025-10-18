@@ -160,7 +160,7 @@ const Navbar = ({ userRole, setUserRole }) => {
           {userRole === "member" && (
             <>
               <li>
-                <Link onClick={closeNavbar} to="/dashboard">Dashboard</Link>
+                <Link onClick={closeNavbar} to="/member-dashboard">Dashboard</Link>
               </li>
               <li>
                 <Link onClick={closeNavbar} to="/profile">Profile</Link>
