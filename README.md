@@ -3,6 +3,58 @@
 A modern and responsive Gym Management Website built with React + Vite.
 It includes three main sections: Public Pages, Admin Dashboard, and Member Dashboard — designed with clean UI, smooth animations (GSAP), and a consistent color palette for a professional look and seamless user experience.
 
+
+## 📸 Screenshots
+
+### 🏠 Public Home Page
+![Public Home](./screenshots/public-home.png)
+A clean and modern landing page introducing the Gym Management System.
+
+---
+
+### 🔐 Login Page
+![Login Page](./screenshots/login-page.png)
+Simple and professional login interface for both admins and members.
+
+---
+
+### 🧑‍💼 Admin Dashboard
+![Admin Dashboard](./screenshots/Admin-Dashboard.png)
+Powerful admin control panel with full access to members, trainers, and activities.
+
+---
+
+### 💪 Members Management (Admin)
+![Admin Members](./screenshots/Admin-members.png)
+Manage gym members — view, edit, and remove users with an intuitive interface.
+
+---
+
+### 👤 Profile Page (Member)
+![Profile Member](./screenshots/Profile-member.png)
+Members can view and update their personal information with a modern layout.
+
+---
+
+---
+
+### 👤 Member Dashboard
+![Member Dashboard](./screenshots/member-home.png)
+Each member has a personalized dashboard displaying their profile and workout updates.
+
+---
+
+### 🏋️ Workout Schedule
+![Workout Schedule](./screenshots/Workout-member.png)
+View weekly training plans and assigned trainers with a modern layout.
+
+---
+
+### 💳 Subscription Details
+![Subscription Details](./screenshots/Subscription-member.png)
+Check current plan, remaining days, and renew membership easily.
+
+
 🚀 Features
 
 🏠 Public Pages
