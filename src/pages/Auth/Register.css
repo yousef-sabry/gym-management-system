@@ -80,6 +80,22 @@
   font-size: 0.95rem;
 }
 
+.admin-note {
+  color: #475569;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.go-login {
+  background: transparent;
+  border: none;
+  color: var(--register-secondary);
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  text-decoration: underline;
+}
+
 .register-icon {
   color: var(--register-secondary);
 }

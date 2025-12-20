@@ -6,8 +6,8 @@ import "./Login.css";
 import loginImage from "../../assets/images/login.jpg";
 
 const Login = ({ setUserRole }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("yousef@ys.com");
+  const [password, setPassword] = useState("123");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -64,6 +64,7 @@ const Login = ({ setUserRole }) => {
             <FaSignInAlt className="login-icon" /> Welcome Back
           </h2>
           <p className="subtitle">Please login to continue</p>
+<p className="admin-note">Note: Default admin email: <strong>yousef@ys.com</strong> - Password: <strong>123</strong></p>
           <form onSubmit={handleLogin}>
             <div className="input-group">
               <FaEnvelope className="input-icon" />

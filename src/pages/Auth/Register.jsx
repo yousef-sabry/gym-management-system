@@ -57,6 +57,10 @@ const Register = () => {
           </h2>
           <span className="page-title">Register Page</span>
           <p className="subtitle">Join us and start your fitness journey</p>
+<p className="admin-note">
+  Note: There is a default admin account — Email: <strong>yousef@ys.com</strong> | Password: <strong>123</strong>. 
+  <button type="button" className="go-login" onClick={() => navigate('/login')}>Go to Login Page</button>
+</p>
           <form onSubmit={handleRegister}>
             <div className="input-group">
               <FaEnvelope className="input-icon" />
