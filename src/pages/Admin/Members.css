@@ -74,10 +74,24 @@
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   border: 1px solid rgba(255, 107, 53, 0.5); /* أغمق شويه عشان تظهر */
 }
+.add-form {
+  background: linear-gradient(180deg, #24303f, #1e293b);
+  border: 2px solid var(--secondary);
+  box-shadow: 
+    0 0 0 1px rgba(255,107,53,0.2),
+    0 15px 35px rgba(0,0,0,0.45);
+  opacity: 1 !important;
+  filter: none !important;
+}
+
 .card-title {
   margin: 0 0 12px 0;
   font-size: 1.1rem;
   color: var(--secondary);
+}
+.add-form .card-title {
+  font-size: 1.25rem;
+  text-shadow: 0 0 8px rgba(255,107,53,0.6);
 }
 
 /* Labels & Inputs */
